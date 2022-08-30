@@ -1,16 +1,6 @@
 ---
 all:
   children:
-    dbt2_client:
-      hosts:
-        dbt2-client:
-          ansible_host: {{ servers['dbt2-client']['public_ip'] }}
-          private_ip: {{ servers['dbt2-client']['private_ip'] }}
-    dbt2_driver:
-      hosts:
-        dbt2-driver:
-          ansible_host: {{ servers['dbt2-driver']['public_ip'] }}
-          private_ip: {{ servers['dbt2-driver']['private_ip'] }}
     pgbouncer:
       hosts:
         proxy1:

@@ -17,12 +17,6 @@ regions:
       - port: 5444
         protocol: tcp
         description: "EPAS"
-      - port: 30000
-        protocol: tcp
-        description: "DBT-2"
-      - port: 30000
-        protocol: udp
-        description: "DBT-2"
       - port: 6432
         protocol: tcp
         description: "PgBouncer / Harp-proxy"
@@ -40,7 +34,7 @@ machines:
     type: bdr
     region: us-east-1
     az: us-east-1b
-    instance_type: c5d.12xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -50,7 +44,7 @@ machines:
     type: bdr
     region: us-east-1
     az: us-east-1c
-    instance_type: c5d.12xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -60,7 +54,7 @@ machines:
     type: bdr
     region: us-east-1
     az: us-east-1b
-    instance_type: c5d.12xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -70,7 +64,7 @@ machines:
     type: harp-proxy
     region: us-east-1
     az: us-east-1b
-    instance_type: c5.9xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -80,7 +74,7 @@ machines:
     type: harp-proxy
     region: us-east-1
     az: us-east-1c
-    instance_type: c5.9xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -102,23 +96,3 @@ machines:
         type: io2
         iops: 20000
         encrypted: false
-  dbt2-client:
-    type: dbt2-client
-    region: us-east-1
-    az: us-east-1b
-    instance_type: c5.18xlarge
-    volume:
-      type: gp2
-      size_gb: 50
-      iops: 5000
-      encrypted: false
-  dbt2-driver:
-    type: dbt2-driver
-    region: us-east-1
-    az: us-east-1b
-    instance_type: c5.18xlarge
-    volume:
-      type: gp2
-      size_gb: 50
-      iops: 5000
-      encrypted: false

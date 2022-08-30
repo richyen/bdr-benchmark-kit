@@ -2,7 +2,6 @@ repo_username: <edb-yum-repo-username>
 repo_password: <edb-yum-repo-password>
 tpa_subscription_token: <tpa-subscription-token>
 tpa_bin_path: /usr/bin
-dbt2_warehouse: 5000
 pg_version: 14
 pg_type: EPAS
 postgres_user: enterprisedb
