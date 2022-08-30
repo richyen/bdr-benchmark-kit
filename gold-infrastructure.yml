@@ -67,7 +67,7 @@ regions:
     ami_id: ami-0f91bc0c77f3dea4c
     cidr_block: 10.2.0.0/16
     azs:
-      us-west-1b: 10.2.0.0/24
+      us-west-1a: 10.2.0.0/24
     service_ports:
       - port: 22
         protocol: tcp
@@ -89,7 +89,7 @@ machines:
     type: bdr
     region: us-east-1
     az: us-east-1b
-    instance_type: c5d.12xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -99,7 +99,7 @@ machines:
     type: bdr
     region: us-east-1
     az: us-east-1c
-    instance_type: c5d.12xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -109,7 +109,7 @@ machines:
     type: bdr
     region: us-east-2
     az: us-east-2a
-    instance_type: c5d.12xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -119,7 +119,7 @@ machines:
     type: bdr
     region: us-east-2
     az: us-east-2b
-    instance_type: c5d.12xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -128,8 +128,8 @@ machines:
   witness1:
     type: bdr-witness
     region: us-west-1
-    az: us-west-1b
-    instance_type: c5.4xlarge
+    az: us-west-1a
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -150,7 +150,7 @@ machines:
     type: harp-proxy
     region: us-east-1
     az: us-east-1b
-    instance_type: c5.9xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -160,7 +160,7 @@ machines:
     type: harp-proxy
     region: us-east-1
     az: us-east-1c
-    instance_type: c5.9xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -170,7 +170,7 @@ machines:
     type: harp-proxy
     region: us-east-2
     az: us-east-2a
-    instance_type: c5.9xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -180,7 +180,7 @@ machines:
     type: harp-proxy
     region: us-east-2
     az: us-east-2b
-    instance_type: c5.9xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -222,7 +222,7 @@ machines:
     type: dbt2-client
     region: us-east-1
     az: us-east-1b
-    instance_type: c5.18xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
@@ -232,7 +232,7 @@ machines:
     type: dbt2-driver
     region: us-east-1
     az: us-east-1b
-    instance_type: c5.18xlarge
+    instance_type: c5.2xlarge
     volume:
       type: gp2
       size_gb: 50
