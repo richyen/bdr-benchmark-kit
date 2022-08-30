@@ -35,12 +35,6 @@ ${TPAEXEC_BIN_DIR}/tpaexec deploy .
 ansible-playbook -u {{ vars['ssh_user'] }} --key-file {{ vars['ssh_priv_key'] }} -i ./inventory.yml -e @./ansible_vars.json ./playbook.yml
 {% endif %}
 
-# DBT2 setup
-ansible-playbook -u {{ vars['ssh_user'] }} --key-file {{ vars['ssh_priv_key'] }} -i ./inventory.yml -e @./ansible_vars.json ./ansible/playbook-dbt2.yml
-ansible-playbook -u {{ vars['ssh_user'] }} --key-file {{ vars['ssh_priv_key'] }} -i ./inventory.yml -e @./ansible_vars.json ./ansible/playbook-ssh-dbt2.yml
-
-# Load DBT2 data
-ansible-playbook -u {{ vars['ssh_user'] }} --key-file {{ vars['ssh_priv_key'] }} -i ./inventory.yml -e @./ansible_vars.json ./ansible/playbook-gen-dbt2-data-{{ architecture }}.yml
 # Post-deployment
 ansible-playbook -u {{ vars['ssh_user'] }} --key-file {{ vars['ssh_priv_key'] }} -i ./inventory.yml -e @./ansible_vars.json ./ansible/playbook-post-deployment.yml
 

@@ -1,17 +1,4 @@
 ---
-- hosts: dbt2_driver
-  name: Copy downtime-checker.py
-  become: yes
-
-  tasks:
-    - name: Copy downtime-checker.py
-      ansible.builtin.copy:
-        src: scripts/downtime-checker.py
-        dest: /home/dbt2/downtime-checker.py
-        owner: dbt2
-        force: true
-      become: true
-
 - hosts: primary
   name: Create the table used for downtime tracking
   become: yes

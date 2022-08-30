@@ -67,7 +67,6 @@ def build_ansible_vars_file(file_path, configuration):
         bdr_wal_decoder=c['bdr_wal_decoder'],
         postgres_user=c['postgres_user'],
         postgres_group=c['postgres_group'],
-        dbt2_warehouse=c['dbt2_warehouse'],
         pg_bin_path=c['pg_bin_path'],
         pg_login_unix_socket='/tmp',
         disable_logging=False,
