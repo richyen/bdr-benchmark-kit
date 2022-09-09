@@ -10,7 +10,7 @@ regions:
       - port: 22
         protocol: tcp
         description: "SSH"
-      - port: 5444
+      - port: 5432
         protocol: tcp
         description: "EPAS"
 machines:

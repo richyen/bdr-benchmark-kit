@@ -245,7 +245,7 @@ $ python3 ./dbt2-driver-rampup.py \
       -m 71 \
       -S 3 \
       -P <proxy1-private-ip> \
-      --pg "host=<bdr1-private-ip> port=5444 user=dbt2 dbname=edb"
+      --pg "host=<bdr1-private-ip> port=5432 user=dbt2 dbname=edb"
 ```
 
 #### Notes

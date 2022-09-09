@@ -14,7 +14,7 @@ regions:
       - port: 5432
         protocol: tcp
         description: "PostgreSQL"
-      - port: 5444
+      - port: 5432
         protocol: tcp
         description: "EPAS"
       - port: 6432

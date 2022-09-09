@@ -64,7 +64,7 @@
             END;
           $$ LANGUAGE plpgsql;
         login_user: "{{ postgres_user }}"
-        port: 5444
+        port: 5432
         login_unix_socket: "{{ pg_login_unix_socket }}"
         db: "{{ bdr_dbname }}"
       become: true
@@ -76,7 +76,7 @@
         query: >-
           ALTER SYSTEM SET wal_compression TO 'off'
         login_user: "{{ postgres_user }}"
-        port: 5444
+        port: 5432
         login_unix_socket: "{{ pg_login_unix_socket }}"
         db: "{{ bdr_dbname }}"
         autocommit: true
@@ -88,7 +88,7 @@
         query: >-
           SELECT pg_reload_conf()
         login_user: "{{ postgres_user }}"
-        port: 5444
+        port: 5432
         login_unix_socket: "{{ pg_login_unix_socket }}"
         autocommit: true
         db: "{{ bdr_dbname }}"
@@ -100,7 +100,7 @@
         query: >-
           SELECT bdr.alter_node_group_config('bdrdb_group', num_writers := {{ bdr_writers }}, enable_wal_decoder := {{ bdr_wal_decoder }})
         login_user: "{{ postgres_user }}"
-        port: 5444
+        port: 5432
         login_unix_socket: "{{ pg_login_unix_socket }}"
         db: "{{ bdr_dbname }}"
         autocommit: true

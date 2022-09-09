@@ -14,7 +14,7 @@
           SELECT pg_create_physical_replication_slot('backup_barman2');
         db: "postgres"
         login_user: "{{ postgres_user }}"
-        port: 5444
+        port: 5432
         login_unix_socket: "{{ pg_login_unix_socket }}"
       become: true
       become_user: "{{ postgres_user }}"
