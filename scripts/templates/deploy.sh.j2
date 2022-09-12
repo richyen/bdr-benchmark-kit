@@ -10,20 +10,16 @@ export TPA_2Q_SUBSCRIPTION_TOKEN="{{ configuration['tpa_subscription_token'] }}"
 
 export ANSIBLE_PIPELINING='true'
 export ANSIBLE_SSH_PIPELINING='true'
+export ANSIBLE_HOST_KEY_CHECKING='False'
 
 {% if architecture in ['gold', 'silver'] %}
 # TPexec provision & deploy
-${TPAEXEC_BIN_DIR}/tpaexec relink .
-${TPAEXEC_BIN_DIR}/tpaexec provision .
+${TPAEXEC_BIN_DIR}/tpaexec relink ${SCRIPT_DIR}
+${TPAEXEC_BIN_DIR}/tpaexec provision ${SCRIPT_DIR}
 {% endif %}
-./add_hosts.sh
-
-## XXX Ugly hack because I can't get tpaexec to use tpa_known_hosts
-for h in `cat add_hosts.sh | grep scan | awk '{ print $3 }'`; do
-  ssh -i ssh-id_rsa -o "strictHostKeyChecking=no" rocky@${h} "echo $h" > /dev/null
-done
+${SCRIPT_DIR}/add_hosts.sh
 
 {% if architecture in ['gold', 'silver'] %}
 # Deploy using TPAexec
-${TPAEXEC_BIN_DIR}/tpaexec deploy .
+${TPAEXEC_BIN_DIR}/tpaexec deploy ${SCRIPT_DIR}
 {% endif %}
