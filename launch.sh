@@ -20,7 +20,7 @@ python ${PROJ_DIR}/scripts/new-project.py ${WORK_DIR} ${PROJ_DIR}/gold-infrastru
 terraform -chdir=${WORK_DIR} init
 
 # Apply Terraform cluster
-terraform -chdir=${WORK_DIR} apply -var-file=${WORK_DIR}/terraform_vars.json -auto-approve
+terraform -chdir=${WORK_DIR} apply -var-file=terraform_vars.json -auto-approve
 
 # Create tpaexec deploy script
 python ${PROJ_DIR}/scripts/pre-deploy.py -a gold ${WORK_DIR} ${PROJ_DIR}/configuration.yml           
