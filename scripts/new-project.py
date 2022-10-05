@@ -151,7 +151,7 @@ if __name__ == '__main__':
     infra_vars['ssh_priv_key'] = str(ssh_priv_key.resolve())
     infra_vars['ssh_pub_key'] = str(ssh_pub_key.resolve())
     # Transform infrastructure configuration to terraform variables
-    to_terraform_vars(env.project_path, 'terraform_vars.json', infra_vars)
+    to_terraform_vars(env.project_path, 'terraform.tfvars.json', infra_vars)
 
     # Generate main.tf and providers.tf
     template_vars = {}

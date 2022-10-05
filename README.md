@@ -141,7 +141,6 @@ cloud resources creation:
      ```shell
      $ cd ~/my_benchmark
      $ terraform apply \
-           -var-file=./terraform_vars.json \
            -auto-approve
      ```
 
@@ -373,6 +372,5 @@ $ sudo harpctl promote bdr1
 ```shell
 $ cd ~/my_benchmark
 $ terraform destroy \
-    -var-file=./terraform_vars.json \
     -auto-approve
 ```

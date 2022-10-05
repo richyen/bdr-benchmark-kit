@@ -115,7 +115,7 @@ if __name__ == '__main__':
 
     servers = load_yaml(env.project_path / 'servers.yml')
     configuration = load_yaml(env.configuration_path)
-    vars = load_json(env.project_path / 'terraform_vars.json')
+    vars = load_json(env.project_path / 'terraform.tfvars.json')
     if env.architecture in ['gold', 'silver']:
         template(
             'config-%s.yml.j2' % env.architecture,
