@@ -77,132 +77,117 @@ machines:
     type: bdr
     region: us-east-1
     az: us-east-1b
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
   bdr2:
     type: bdr
     region: us-east-1
     az: us-east-1c
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
   bdr3:
     type: bdr
     region: us-east-2
     az: us-east-2a
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
   bdr4:
     type: bdr
     region: us-east-2
     az: us-east-2b
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
   witness1:
     type: bdr-witness
     region: us-west-1
     az: us-west-1a
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
     additional_volumes:
       - mount_point: /pgdata
         size_gb: 50
-        type: io2
-        iops: 2000
+        type: gp2
         encrypted: false
       - mount_point: /pgwal
         size_gb: 50
-        type: io2
-        iops: 2000
+        type: gp2
         encrypted: false
   proxy1:
     type: harp-proxy
     region: us-east-1
     az: us-east-1b
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
   proxy2:
     type: harp-proxy
     region: us-east-1
     az: us-east-1c
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
   proxy3:
     type: harp-proxy
     region: us-east-2
     az: us-east-2a
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
   proxy4:
     type: harp-proxy
     region: us-east-2
     az: us-east-2b
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
   barman1:
     type: barman
     region: us-east-1
     az: us-east-1b
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
     additional_volumes:
       - mount_point: /var/lib/barman
         size_gb: 3000
-        type: io2
-        iops: 20000
+        type: gp2
         encrypted: false
   barman2:
     type: barman
     region: us-east-2
     az: us-east-2a
-    instance_type: c5.2xlarge
+    instance_type: m5.2xlarge
     volume:
       type: gp2
       size_gb: 50
-      iops: 5000
       encrypted: false
     additional_volumes:
       - mount_point: /var/lib/barman
         size_gb: 3000
-        type: io2
-        iops: 20000
+        type: gp2
         encrypted: false
